@@ -1,4 +1,4 @@
-# remaining-lifetime
+# Remaining Lifetime
 Calculate your remaining seconds of life based on life expectancy from your country and sex
 
 ## Usage
