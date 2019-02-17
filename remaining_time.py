@@ -1,6 +1,7 @@
 from datetime import datetime
 import time
 import csv
+import argparse
 
 FILE_PATH = 'life_expectancy_country.csv'
 COUNTRY_COLUMN = 'Country and regions'
@@ -30,6 +31,13 @@ def remaining_time(age, country, sex):
 
 populate_life_expectancy_db()
 
+parser = argparse.ArgumentParser()
+parser.add_argument('--age', help='Your age', default=0, type=int)
+parser.add_argument('--sex', help='Your sex', default='m', type=str)
+parser.add_argument('--country', help='Your country', default='united kingdom', type=str)
+
+args = parser.parse_args()
+
 while 1:
-    print(remaining_time(26, 'united kingdom', 'm'))
+    print(remaining_time(args.age, args.country, args.sex), end='\r')
     time.sleep(1)
